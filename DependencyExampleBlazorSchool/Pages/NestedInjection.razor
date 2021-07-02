@@ -1,0 +1,5 @@
+﻿@using Data
+@inject WaiterService WaiterService
+@page "/nested-injection"
+
+<h3>@WaiterService.Serve()</h3>
