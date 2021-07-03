@@ -1,0 +1,25 @@
+﻿@page "/compare-injection"
+@using Data
+@inject TransientGuidProviderService TransientService
+@inject TransientGuidProviderService TransientService2
+@inject ScopedGuidProviderService ScopedService
+@inject ScopedGuidProviderService ScopedService2
+@inject SingletonGuidProviderService SingletonService
+@inject SingletonGuidProviderService SingletonService2
+
+<div class="row">
+    <div class="card col-6">
+        <h3 class="card-title">First inject:</h3>
+        <div>Transient: @TransientService.Id</div>
+        <div>Scoped: @ScopedService.Id</div>
+        <div>Singleton: @SingletonService.Id</div>
+    </div>
+    <div class="card col-6">
+        <h3 class="card-title">Second inject:</h3>
+        <div>Transient: @TransientService2.Id</div>
+        <div>Scoped: @ScopedService2.Id</div>
+        <div>Singleton: @SingletonService2.Id</div>
+    </div>
+</div>
+
+<NavLink href="/compare-injection" target="_blank">Trigger new request</NavLink>
